@@ -1,0 +1,7 @@
+cd.=explorer .
+open=explorer $*
+gl=git log --oneline --all --graph --decorate  $*
+ls=ls --color $*
+pgrep=tasklist | grep -i $*
+pkill=taskkill /f /im $*
+vi=notepad.exe $*
