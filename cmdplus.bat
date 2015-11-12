@@ -2,7 +2,13 @@
 
 :: Define root dir
 if not defined CMDPLUS_PROFILE (
-    set CMDPLUS_PROFILE=%~dp0config
+    set CMDPLUS_PROFILE=%USERPROFILE%\cmdplus
+)
+
+if not exist %CMDPLUS_PROFILE% (
+    mkdir %CMDPLUS_PROFILE%
+    copy %~dp0config\aliases %CMDPLUS_PROFILE%
+    copy %~dp0config\prompt.lua %CMDPLUS_PROFILE%
 )
 
 :: Change the prompt style
