@@ -1,6 +1,6 @@
-function lambda_prompt_filter()
-    clink.prompt.value = string.gsub(clink.prompt.value, "{lamb}", "$")
-end
+-- local function lambda_prompt_filter()
+--     clink.prompt.value = string.gsub(clink.prompt.value, "{lamb}", "$")
+-- end
 
 ---
  -- Resolves closest directory location for specified directory.
@@ -61,7 +61,7 @@ end
  -- Find out current branch
  -- @return {false|git branch name}
 ---
-function get_git_branch()
+local function get_git_branch()
     for line in io.popen("git branch 2>nul"):lines() do
         local m = line:match("%* (.+)$")
         if m then
@@ -76,11 +76,11 @@ end
  -- Get the status of working dir
  -- @return {bool}
 ---
-function get_git_status()
+local function get_git_status()
     return os.execute("git diff --quiet --ignore-submodules HEAD 2>nul")
 end
 
-function git_prompt_filter()
+local function git_prompt_filter()
 
     -- Colors for git status
     local colors = {
@@ -111,5 +111,5 @@ function git_prompt_filter()
     return false
 end
 
-clink.prompt.register_filter(lambda_prompt_filter, 40)
+-- clink.prompt.register_filter(lambda_prompt_filter, 40)
 clink.prompt.register_filter(git_prompt_filter, 50)

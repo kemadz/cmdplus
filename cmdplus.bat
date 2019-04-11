@@ -13,7 +13,7 @@ if not exist %CMDPLUS_PROFILE% (
 
 :: Change the prompt style
 :: Mmm tasty lamb
-prompt $E[1;32;40m$P{git}$S$E[1;37;40m{lamb}$S$E[0m
+prompt $E[1;32;40m$P{git}$S$E[1;37;40m$G$S$E[0m
 
 :: Clink inject
 if /i "%PROCESSOR_ARCHITECTURE%"=="x86" (

@@ -4,7 +4,7 @@
 REG ADD "HKLM\Software\Microsoft\Command Processor" /v AutoRun /t REG_EXPAND_SZ /d "%~dp0cmdplus.bat" /f
 
 :: cmd Colors
-REG IMPORT cmd-colors-solarized.reg
+rem REG IMPORT cmd-colors-solarized.reg
 
 :: cmd Font
-REG IMPORT cmd-font.reg
+rem REG IMPORT cmd-font.reg
